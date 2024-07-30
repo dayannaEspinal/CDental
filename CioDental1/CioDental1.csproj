@@ -1,0 +1,2056 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A55A4DC-6666-47FC-88D5-1186DA60D55E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CioDental1</RootNamespace>
+    <AssemblyName>CioDental1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.6, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.6\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuscarCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarCitas.Designer.cs">
+      <DependentUpon>BuscarCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarProductos.Designer.cs">
+      <DependentUpon>BuscarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarTratamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarTratamiento.Designer.cs">
+      <DependentUpon>BuscarTratamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet111.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet111.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet17.cs">
+      <DependentUpon>CioDental1DataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet18.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet19.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet19.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet20.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet20.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet22.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet22.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet23.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet23.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet24.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet24.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet25.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet25.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet26.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet26.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet27.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet27.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet28.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet28.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet29.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet29.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet30.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet30.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet311.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet311.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet32.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet32.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet33.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet33.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet34.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet34.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet35.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet35.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet36.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet36.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet37.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet37.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet38.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet38.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet39.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet39.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet40.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet40.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet41.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet41.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet42.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet42.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet43.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet43.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet44.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet44.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet45.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet45.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet46.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet46.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet47.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet47.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet48.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet48.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet49.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet49.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet50.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet50.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet51.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet51.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet52.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet52.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet53.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet53.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet54.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet54.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet55.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet55.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet56.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet56.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet57.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet57.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet58.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet58.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet59.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet59.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet60.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet60.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet61.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet61.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet62.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet62.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet63.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet63.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet64.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet64.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet65.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet65.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet66.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet66.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet67.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet67.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet68.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet68.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet69.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet69.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet70.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet70.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet71.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet71.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet72.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet72.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet73.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet73.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet74.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet74.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet751.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet751.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet76.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet76.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet77.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet77.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet78.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet78.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet79.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet79.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet80.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet80.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet81.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet81.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet82.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet82.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet83.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet83.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet84.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet84.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet85.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet85.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet86.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet86.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet87.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet87.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet88.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet88.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet89.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet89.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet90.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet90.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet91.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet91.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet92.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet92.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet93.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet93.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet94.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet94.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet95.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet95.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CioDental1DataSet96.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CioDental1DataSet96.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Citas.cs" />
+    <Compile Include="Conexión.cs" />
+    <Compile Include="DetalleFactura.cs" />
+    <Compile Include="FrmBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBitacora.Designer.cs">
+      <DependentUpon>FrmBitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCitas.Designer.cs">
+      <DependentUpon>FrmCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCompras.Designer.cs">
+      <DependentUpon>FrmCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmContactoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmContactoProveedor.Designer.cs">
+      <DependentUpon>FrmContactoProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFactura.Designer.cs">
+      <DependentUpon>FrmFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInicioSesión.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInicioSesión.Designer.cs">
+      <DependentUpon>FrmInicioSesión.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenuPrincipal.Designer.cs">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenuReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenuReportes.Designer.cs">
+      <DependentUpon>FrmMenuReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPacientes.Designer.cs">
+      <DependentUpon>FrmPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductos.Designer.cs">
+      <DependentUpon>FrmProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProductosMasVendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProductosMasVendidos.Designer.cs">
+      <DependentUpon>FrmProductosMasVendidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProveedores.Designer.cs">
+      <DependentUpon>FrmProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistroSesión.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistroSesión.Designer.cs">
+      <DependentUpon>FrmRegistroSesión.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMarcas.Designer.cs">
+      <DependentUpon>FrmMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteEstadoCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteEstadoCuenta.Designer.cs">
+      <DependentUpon>FrmReporteEstadoCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteFactura.Designer.cs">
+      <DependentUpon>FrmReporteFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteObtenerComprasPorFechas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteObtenerComprasPorFechas.Designer.cs">
+      <DependentUpon>FrmReporteObtenerComprasPorFechas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteObtenerDetallesCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteObtenerDetallesCompras.Designer.cs">
+      <DependentUpon>FrmReporteObtenerDetallesCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteObtenerFacturasPorFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteObtenerFacturasPorFecha.Designer.cs">
+      <DependentUpon>FrmReporteObtenerFacturasPorFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteObtenerFechaVencerProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteObtenerFechaVencerProducto.Designer.cs">
+      <DependentUpon>FrmReporteObtenerFechaVencerProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteObtenerProductosMenorStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteObtenerProductosMenorStock.Designer.cs">
+      <DependentUpon>FrmReporteObtenerProductosMenorStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportePacientesConMasCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportePacientesConMasCitas.Designer.cs">
+      <DependentUpon>FrmReportePacientesConMasCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteProductosMenosVendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteProductosMenosVendidos.Designer.cs">
+      <DependentUpon>FrmReporteProductosMenosVendidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteTop5Tratamientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteTop5Tratamientos.Designer.cs">
+      <DependentUpon>FrmReporteTop5Tratamientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteTop5TratamientosMenosAplicados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteTop5TratamientosMenosAplicados.Designer.cs">
+      <DependentUpon>FrmReporteTop5TratamientosMenosAplicados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteTopDiasCitasAtendidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteTopDiasCitasAtendidas.Designer.cs">
+      <DependentUpon>FrmReporteTopDiasCitasAtendidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteTopHorasConMasPacientesAtendidoscs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteTopHorasConMasPacientesAtendidoscs.Designer.cs">
+      <DependentUpon>FrmReporteTopHorasConMasPacientesAtendidoscs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FrmTratamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTratamiento.Designer.cs">
+      <DependentUpon>FrmTratamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Tratamiento.cs" />
+    <EmbeddedResource Include="BuscarCitas.resx">
+      <DependentUpon>BuscarCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarProductos.resx">
+      <DependentUpon>BuscarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarTratamiento.resx">
+      <DependentUpon>BuscarTratamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBitacora.resx">
+      <DependentUpon>FrmBitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCitas.resx">
+      <DependentUpon>FrmCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCompras.resx">
+      <DependentUpon>FrmCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmContactoProveedor.resx">
+      <DependentUpon>FrmContactoProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFactura.resx">
+      <DependentUpon>FrmFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInicioSesión.resx">
+      <DependentUpon>FrmInicioSesión.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMarcas.resx">
+      <DependentUpon>FrmMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenuPrincipal.resx">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenuReportes.resx">
+      <DependentUpon>FrmMenuReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPacientes.resx">
+      <DependentUpon>FrmPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductos.resx">
+      <DependentUpon>FrmProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProductosMasVendidos.resx">
+      <DependentUpon>FrmProductosMasVendidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProveedores.resx">
+      <DependentUpon>FrmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistroSesión.resx">
+      <DependentUpon>FrmRegistroSesión.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteEstadoCuenta.resx">
+      <DependentUpon>FrmReporteEstadoCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteFactura.resx">
+      <DependentUpon>FrmReporteFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteObtenerComprasPorFechas.resx">
+      <DependentUpon>FrmReporteObtenerComprasPorFechas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteObtenerDetallesCompras.resx">
+      <DependentUpon>FrmReporteObtenerDetallesCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteObtenerFacturasPorFecha.resx">
+      <DependentUpon>FrmReporteObtenerFacturasPorFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteObtenerFechaVencerProducto.resx">
+      <DependentUpon>FrmReporteObtenerFechaVencerProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteObtenerProductosMenorStock.resx">
+      <DependentUpon>FrmReporteObtenerProductosMenorStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportePacientesConMasCitas.resx">
+      <DependentUpon>FrmReportePacientesConMasCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteProductosMenosVendidos.resx">
+      <DependentUpon>FrmReporteProductosMenosVendidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteTop5Tratamientos.resx">
+      <DependentUpon>FrmReporteTop5Tratamientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteTop5TratamientosMenosAplicados.resx">
+      <DependentUpon>FrmReporteTop5TratamientosMenosAplicados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteTopDiasCitasAtendidas.resx">
+      <DependentUpon>FrmReporteTopDiasCitasAtendidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteTopHorasConMasPacientesAtendidoscs.resx">
+      <DependentUpon>FrmReporteTopHorasConMasPacientesAtendidoscs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="FrmTratamiento.resx">
+      <DependentUpon>FrmTratamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptEstadoCuenta.rdlc" />
+    <EmbeddedResource Include="RptFactura.rdlc" />
+    <EmbeddedResource Include="RptHorasConMasPacientesAtendidos.rdlc" />
+    <EmbeddedResource Include="RptObtenerComprasDetalle.rdlc" />
+    <EmbeddedResource Include="RptObtenerComprasPorFecha.rdlc" />
+    <EmbeddedResource Include="RptObtenerFacturasPorFechas.rdlc" />
+    <EmbeddedResource Include="RptObtenerFechaVencerProducto.rdlc" />
+    <EmbeddedResource Include="RptObtenerPacientesConMasCitas.rdlc" />
+    <EmbeddedResource Include="RptObtenerProductosMenorStock.rdlc" />
+    <EmbeddedResource Include="RptTop5Tratamientos.rdlc" />
+    <EmbeddedResource Include="RptTopDiasCitasAtendidas.rdlc" />
+    <EmbeddedResource Include="RptTopProductos.rdlc" />
+    <EmbeddedResource Include="RptTopProductoSMenosVendidos.rdlc" />
+    <EmbeddedResource Include="RptTratamientosMenosAplicados.rdlc" />
+    <None Include="CioDental1DataSet.xsc">
+      <DependentUpon>CioDental1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet.xss">
+      <DependentUpon>CioDental1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet10.xsc">
+      <DependentUpon>CioDental1DataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet10.xss">
+      <DependentUpon>CioDental1DataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet11.xsc">
+      <DependentUpon>CioDental1DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet11.xss">
+      <DependentUpon>CioDental1DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet111.xsc">
+      <DependentUpon>CioDental1DataSet111.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet111.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet111.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet111.xss">
+      <DependentUpon>CioDental1DataSet111.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet12.xsc">
+      <DependentUpon>CioDental1DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet12.xss">
+      <DependentUpon>CioDental1DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet13.xsc">
+      <DependentUpon>CioDental1DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet13.xss">
+      <DependentUpon>CioDental1DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet14.xsc">
+      <DependentUpon>CioDental1DataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet14.xss">
+      <DependentUpon>CioDental1DataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet15.xsc">
+      <DependentUpon>CioDental1DataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet15.xss">
+      <DependentUpon>CioDental1DataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet16.xsc">
+      <DependentUpon>CioDental1DataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet16.xss">
+      <DependentUpon>CioDental1DataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet17.xsc">
+      <DependentUpon>CioDental1DataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet17.xss">
+      <DependentUpon>CioDental1DataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet18.xsc">
+      <DependentUpon>CioDental1DataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet18.xss">
+      <DependentUpon>CioDental1DataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet19.xsc">
+      <DependentUpon>CioDental1DataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet19.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet19.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet19.xss">
+      <DependentUpon>CioDental1DataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet2.xsc">
+      <DependentUpon>CioDental1DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet2.xss">
+      <DependentUpon>CioDental1DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet20.xsc">
+      <DependentUpon>CioDental1DataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet20.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet20.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet20.xss">
+      <DependentUpon>CioDental1DataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet21.xsc">
+      <DependentUpon>CioDental1DataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet21.xss">
+      <DependentUpon>CioDental1DataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet22.xsc">
+      <DependentUpon>CioDental1DataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet22.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet22.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet22.xss">
+      <DependentUpon>CioDental1DataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet23.xsc">
+      <DependentUpon>CioDental1DataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet23.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet23.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet23.xss">
+      <DependentUpon>CioDental1DataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet24.xsc">
+      <DependentUpon>CioDental1DataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet24.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet24.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet24.xss">
+      <DependentUpon>CioDental1DataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet25.xsc">
+      <DependentUpon>CioDental1DataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet25.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet25.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet25.xss">
+      <DependentUpon>CioDental1DataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet26.xsc">
+      <DependentUpon>CioDental1DataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet26.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet26.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet26.xss">
+      <DependentUpon>CioDental1DataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet27.xsc">
+      <DependentUpon>CioDental1DataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet27.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet27.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet27.xss">
+      <DependentUpon>CioDental1DataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet28.xsc">
+      <DependentUpon>CioDental1DataSet28.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet28.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet28.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet28.xss">
+      <DependentUpon>CioDental1DataSet28.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet29.xsc">
+      <DependentUpon>CioDental1DataSet29.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet29.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet29.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet29.xss">
+      <DependentUpon>CioDental1DataSet29.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet3.xsc">
+      <DependentUpon>CioDental1DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet3.xss">
+      <DependentUpon>CioDental1DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet30.xsc">
+      <DependentUpon>CioDental1DataSet30.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet30.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet30.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet30.xss">
+      <DependentUpon>CioDental1DataSet30.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet311.xsc">
+      <DependentUpon>CioDental1DataSet311.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet311.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet311.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet311.xss">
+      <DependentUpon>CioDental1DataSet311.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet32.xsc">
+      <DependentUpon>CioDental1DataSet32.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet32.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet32.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet32.xss">
+      <DependentUpon>CioDental1DataSet32.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet33.xsc">
+      <DependentUpon>CioDental1DataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet33.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet33.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet33.xss">
+      <DependentUpon>CioDental1DataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet34.xsc">
+      <DependentUpon>CioDental1DataSet34.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet34.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet34.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet34.xss">
+      <DependentUpon>CioDental1DataSet34.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet35.xsc">
+      <DependentUpon>CioDental1DataSet35.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet35.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet35.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet35.xss">
+      <DependentUpon>CioDental1DataSet35.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet36.xsc">
+      <DependentUpon>CioDental1DataSet36.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet36.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet36.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet36.xss">
+      <DependentUpon>CioDental1DataSet36.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet37.xsc">
+      <DependentUpon>CioDental1DataSet37.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet37.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet37.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet37.xss">
+      <DependentUpon>CioDental1DataSet37.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet38.xsc">
+      <DependentUpon>CioDental1DataSet38.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet38.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet38.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet38.xss">
+      <DependentUpon>CioDental1DataSet38.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet39.xsc">
+      <DependentUpon>CioDental1DataSet39.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet39.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet39.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet39.xss">
+      <DependentUpon>CioDental1DataSet39.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet4.xsc">
+      <DependentUpon>CioDental1DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet4.xss">
+      <DependentUpon>CioDental1DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet40.xsc">
+      <DependentUpon>CioDental1DataSet40.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet40.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet40.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet40.xss">
+      <DependentUpon>CioDental1DataSet40.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet41.xsc">
+      <DependentUpon>CioDental1DataSet41.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet41.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet41.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet41.xss">
+      <DependentUpon>CioDental1DataSet41.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet42.xsc">
+      <DependentUpon>CioDental1DataSet42.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet42.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet42.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet42.xss">
+      <DependentUpon>CioDental1DataSet42.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet43.xsc">
+      <DependentUpon>CioDental1DataSet43.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet43.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet43.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet43.xss">
+      <DependentUpon>CioDental1DataSet43.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet44.xsc">
+      <DependentUpon>CioDental1DataSet44.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet44.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet44.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet44.xss">
+      <DependentUpon>CioDental1DataSet44.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet45.xsc">
+      <DependentUpon>CioDental1DataSet45.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet45.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet45.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet45.xss">
+      <DependentUpon>CioDental1DataSet45.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet46.xsc">
+      <DependentUpon>CioDental1DataSet46.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet46.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet46.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet46.xss">
+      <DependentUpon>CioDental1DataSet46.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet47.xsc">
+      <DependentUpon>CioDental1DataSet47.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet47.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet47.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet47.xss">
+      <DependentUpon>CioDental1DataSet47.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet48.xsc">
+      <DependentUpon>CioDental1DataSet48.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet48.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet48.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet48.xss">
+      <DependentUpon>CioDental1DataSet48.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet49.xsc">
+      <DependentUpon>CioDental1DataSet49.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet49.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet49.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet49.xss">
+      <DependentUpon>CioDental1DataSet49.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet5.xsc">
+      <DependentUpon>CioDental1DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet5.xss">
+      <DependentUpon>CioDental1DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet50.xsc">
+      <DependentUpon>CioDental1DataSet50.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet50.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet50.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet50.xss">
+      <DependentUpon>CioDental1DataSet50.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet51.xsc">
+      <DependentUpon>CioDental1DataSet51.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet51.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet51.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet51.xss">
+      <DependentUpon>CioDental1DataSet51.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet52.xsc">
+      <DependentUpon>CioDental1DataSet52.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet52.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet52.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet52.xss">
+      <DependentUpon>CioDental1DataSet52.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet53.xsc">
+      <DependentUpon>CioDental1DataSet53.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet53.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet53.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet53.xss">
+      <DependentUpon>CioDental1DataSet53.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet54.xsc">
+      <DependentUpon>CioDental1DataSet54.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet54.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet54.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet54.xss">
+      <DependentUpon>CioDental1DataSet54.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet55.xsc">
+      <DependentUpon>CioDental1DataSet55.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet55.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet55.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet55.xss">
+      <DependentUpon>CioDental1DataSet55.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet56.xsc">
+      <DependentUpon>CioDental1DataSet56.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet56.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet56.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet56.xss">
+      <DependentUpon>CioDental1DataSet56.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet57.xsc">
+      <DependentUpon>CioDental1DataSet57.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet57.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet57.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet57.xss">
+      <DependentUpon>CioDental1DataSet57.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet58.xsc">
+      <DependentUpon>CioDental1DataSet58.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet58.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet58.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet58.xss">
+      <DependentUpon>CioDental1DataSet58.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet59.xsc">
+      <DependentUpon>CioDental1DataSet59.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet59.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet59.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet59.xss">
+      <DependentUpon>CioDental1DataSet59.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet6.xsc">
+      <DependentUpon>CioDental1DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet6.xss">
+      <DependentUpon>CioDental1DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet60.xsc">
+      <DependentUpon>CioDental1DataSet60.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet60.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet60.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet60.xss">
+      <DependentUpon>CioDental1DataSet60.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet61.xsc">
+      <DependentUpon>CioDental1DataSet61.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet61.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet61.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet61.xss">
+      <DependentUpon>CioDental1DataSet61.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet62.xsc">
+      <DependentUpon>CioDental1DataSet62.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet62.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet62.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet62.xss">
+      <DependentUpon>CioDental1DataSet62.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet63.xsc">
+      <DependentUpon>CioDental1DataSet63.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet63.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet63.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet63.xss">
+      <DependentUpon>CioDental1DataSet63.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet64.xsc">
+      <DependentUpon>CioDental1DataSet64.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet64.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet64.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet64.xss">
+      <DependentUpon>CioDental1DataSet64.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet65.xsc">
+      <DependentUpon>CioDental1DataSet65.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet65.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet65.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet65.xss">
+      <DependentUpon>CioDental1DataSet65.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet66.xsc">
+      <DependentUpon>CioDental1DataSet66.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet66.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet66.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet66.xss">
+      <DependentUpon>CioDental1DataSet66.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet67.xsc">
+      <DependentUpon>CioDental1DataSet67.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet67.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet67.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet67.xss">
+      <DependentUpon>CioDental1DataSet67.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet68.xsc">
+      <DependentUpon>CioDental1DataSet68.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet68.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet68.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet68.xss">
+      <DependentUpon>CioDental1DataSet68.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet69.xsc">
+      <DependentUpon>CioDental1DataSet69.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet69.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet69.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet69.xss">
+      <DependentUpon>CioDental1DataSet69.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet7.xsc">
+      <DependentUpon>CioDental1DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet7.xss">
+      <DependentUpon>CioDental1DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet70.xsc">
+      <DependentUpon>CioDental1DataSet70.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet70.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet70.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet70.xss">
+      <DependentUpon>CioDental1DataSet70.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet71.xsc">
+      <DependentUpon>CioDental1DataSet71.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet71.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet71.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet71.xss">
+      <DependentUpon>CioDental1DataSet71.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet72.xsc">
+      <DependentUpon>CioDental1DataSet72.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet72.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet72.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet72.xss">
+      <DependentUpon>CioDental1DataSet72.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet73.xsc">
+      <DependentUpon>CioDental1DataSet73.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet73.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet73.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet73.xss">
+      <DependentUpon>CioDental1DataSet73.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet74.xsc">
+      <DependentUpon>CioDental1DataSet74.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet74.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet74.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet74.xss">
+      <DependentUpon>CioDental1DataSet74.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet751.xsc">
+      <DependentUpon>CioDental1DataSet751.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet751.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet751.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet751.xss">
+      <DependentUpon>CioDental1DataSet751.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet76.xsc">
+      <DependentUpon>CioDental1DataSet76.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet76.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet76.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet76.xss">
+      <DependentUpon>CioDental1DataSet76.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet77.xsc">
+      <DependentUpon>CioDental1DataSet77.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet77.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet77.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet77.xss">
+      <DependentUpon>CioDental1DataSet77.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet78.xsc">
+      <DependentUpon>CioDental1DataSet78.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet78.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet78.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet78.xss">
+      <DependentUpon>CioDental1DataSet78.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet79.xsc">
+      <DependentUpon>CioDental1DataSet79.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet79.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet79.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet79.xss">
+      <DependentUpon>CioDental1DataSet79.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet8.xsc">
+      <DependentUpon>CioDental1DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet8.xss">
+      <DependentUpon>CioDental1DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet80.xsc">
+      <DependentUpon>CioDental1DataSet80.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet80.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet80.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet80.xss">
+      <DependentUpon>CioDental1DataSet80.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet81.xsc">
+      <DependentUpon>CioDental1DataSet81.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet81.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet81.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet81.xss">
+      <DependentUpon>CioDental1DataSet81.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet82.xsc">
+      <DependentUpon>CioDental1DataSet82.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet82.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet82.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet82.xss">
+      <DependentUpon>CioDental1DataSet82.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet83.xsc">
+      <DependentUpon>CioDental1DataSet83.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet83.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet83.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet83.xss">
+      <DependentUpon>CioDental1DataSet83.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet84.xsc">
+      <DependentUpon>CioDental1DataSet84.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet84.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet84.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet84.xss">
+      <DependentUpon>CioDental1DataSet84.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet85.xsc">
+      <DependentUpon>CioDental1DataSet85.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet85.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet85.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet85.xss">
+      <DependentUpon>CioDental1DataSet85.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet86.xsc">
+      <DependentUpon>CioDental1DataSet86.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet86.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet86.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet86.xss">
+      <DependentUpon>CioDental1DataSet86.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet87.xsc">
+      <DependentUpon>CioDental1DataSet87.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet87.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet87.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet87.xss">
+      <DependentUpon>CioDental1DataSet87.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet88.xsc">
+      <DependentUpon>CioDental1DataSet88.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet88.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet88.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet88.xss">
+      <DependentUpon>CioDental1DataSet88.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet89.xsc">
+      <DependentUpon>CioDental1DataSet89.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet89.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet89.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet89.xss">
+      <DependentUpon>CioDental1DataSet89.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet9.xsc">
+      <DependentUpon>CioDental1DataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet9.xss">
+      <DependentUpon>CioDental1DataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet90.xsc">
+      <DependentUpon>CioDental1DataSet90.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet90.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet90.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet90.xss">
+      <DependentUpon>CioDental1DataSet90.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet91.xsc">
+      <DependentUpon>CioDental1DataSet91.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet91.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet91.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet91.xss">
+      <DependentUpon>CioDental1DataSet91.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet92.xsc">
+      <DependentUpon>CioDental1DataSet92.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet92.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet92.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet92.xss">
+      <DependentUpon>CioDental1DataSet92.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet93.xsc">
+      <DependentUpon>CioDental1DataSet93.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet93.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet93.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet93.xss">
+      <DependentUpon>CioDental1DataSet93.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet94.xsc">
+      <DependentUpon>CioDental1DataSet94.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet94.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet94.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet94.xss">
+      <DependentUpon>CioDental1DataSet94.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet95.xsc">
+      <DependentUpon>CioDental1DataSet95.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet95.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet95.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet95.xss">
+      <DependentUpon>CioDental1DataSet95.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet96.xsc">
+      <DependentUpon>CioDental1DataSet96.xsd</DependentUpon>
+    </None>
+    <None Include="CioDental1DataSet96.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CioDental1DataSet96.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CioDental1DataSet96.xss">
+      <DependentUpon>CioDental1DataSet96.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_CioDental.png" />
+    <None Include="Resources\logo_CioDental1.png" />
+    <None Include="Resources\icono_cerrar.png" />
+    <None Include="Resources\cerrar-ventana.png" />
+    <None Include="Resources\cerrar.png" />
+    <None Include="Resources\cerrar %283%29.png" />
+    <None Include="Resources\cerrar %284%29.png" />
+    <None Include="Resources\cerrar1.png" />
+    <None Include="Resources\cerrar %285%29.png" />
+    <None Include="Resources\maximizar.png" />
+    <None Include="Resources\maximizar-tamano.png" />
+    <None Include="Resources\signo-menos.png" />
+    <None Include="Resources\cerrar %286%29.png" />
+    <None Include="Resources\maximizar %281%29.png" />
+    <None Include="Resources\medico.png" />
+    <None Include="Resources\medico %281%29.png" />
+    <None Include="Resources\medico %282%29.png" />
+    <None Include="Resources\medico %281%291.png" />
+    <None Include="Resources\tratamiento.png" />
+    <None Include="Resources\cita.png" />
+    <None Include="Resources\estetoscopio.png" />
+    <None Include="Resources\pasta-dental.png" />
+    <None Include="Resources\ubicacion.png" />
+    <None Include="Resources\proveedor-hotelero.png" />
+    <None Include="Resources\proveedor.png" />
+    <None Include="Resources\anadir-al-carrito.png" />
+    <None Include="Resources\ventas.png" />
+    <None Include="Resources\reporte.png" />
+    <None Include="Resources\agregar-usuario.png" />
+    <None Include="Resources\web.png" />
+    <None Include="Resources\usuario-de-perfil %283%291.png" />
+    <None Include="Resources\usuario-de-perfil %282%291.png" />
+    <None Include="Resources\firmar %281%29.png" />
+    <None Include="Resources\firmar %282%29.png" />
+    <None Include="Resources\boton-editar.png" />
+    <None Include="Resources\boton-editar %281%29.png" />
+    <None Include="Resources\boton-editar1.png" />
+    <None Include="Resources\editar.png" />
+    <None Include="Resources\editar %281%29.png" />
+    <None Include="Resources\boton-editar %281%291.png" />
+    <None Include="Resources\boton-editar %281%292.png" />
+    <None Include="Resources\componer.png" />
+    <None Include="Resources\componer %281%29.png" />
+    <None Include="Resources\componer %282%29.png" />
+    <None Include="Resources\componer %281%291.png" />
+    <None Include="Resources\editar %282%29.png" />
+    <None Include="Resources\editar1.png" />
+    <None Include="Resources\editar %281%291.png" />
+    <None Include="Resources\boton-editar %281%293.png" />
+    <None Include="Resources\dibujar.png" />
+    <None Include="Resources\dibujar %281%29.png" />
+    <None Include="Resources\boton-editar2.png" />
+    <None Include="Resources\boton-editar %281%294.png" />
+    <None Include="Resources\editar %283%29.png" />
+    <None Include="Resources\editar %282%291.png" />
+    <None Include="Resources\editar %284%29.png" />
+    <None Include="Resources\editar %285%29.png" />
+    <None Include="Resources\editar-archivo.png" />
+    <None Include="Resources\desactivar.png" />
+    <None Include="Resources\desactivar %281%29.png" />
+    <None Include="Resources\expediente.png" />
+    <None Include="Resources\boton-de-desactivacion-de-visibilidad.png" />
+    <None Include="Resources\boton-de-desactivacion-de-visibilidad %281%29.png" />
+    <None Include="Resources\boton-de-desactivacion-de-visibilidad1.png" />
+    <None Include="Resources\restriccion.png" />
+    <None Include="Resources\borrar.png" />
+    <None Include="Resources\ocultar.png" />
+    <None Include="Resources\anadir.png" />
+    <None Include="Resources\anadir %281%29.png" />
+    <None Include="Resources\anadir %282%29.png" />
+    <None Include="Resources\anadir %283%29.png" />
+    <None Include="Resources\firmar %281%291.png" />
+    <None Include="Resources\editar-archivo1.png" />
+    <None Include="Resources\flecha-hacia-atras.png" />
+    <None Include="Resources\buscar.png" />
+    <None Include="Resources\logo_CioDental2.png" />
+    <None Include="Resources\logo_CioDental3.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
