@@ -46,7 +46,7 @@ namespace CioDental1
         
         public bool Modificaciones(String Comando)
         {
-            SqlConnection sqlCon = new SqlConnection("Data Source=DESKTOP-1BUCJLF\\SQLEXPRESS; Initial Catalog=CioDental1; Integrated Security=true"); // Crea una conexión a la base de datos utilizando la cadena de conexión proporcionada
+            SqlConnection sqlCon = new SqlConnection("Data Source=localhost; Initial Catalog=CioDental1; Integrated Security=true"); // Crea una conexión a la base de datos utilizando la cadena de conexión proporcionada
             SqlCommand sqlCmd = new SqlCommand(Comando, sqlCon); 
 
             sqlCon.Open(); 
@@ -213,7 +213,7 @@ namespace CioDental1
                 return false; // Retorna falso si no tiene filas
             }
 
-            sqlCon.Close(); // Cierra la conexión a la base de datos (nota: esta línea no se ejecutará debido al return anterior)
+            //sqlCon.Close(); // Cierra la conexión a la base de datos (nota: esta línea no se ejecutará debido al return anterior)
         }
 
         // Método para leer datos de una consulta SQL y devolver un SqlDataReader

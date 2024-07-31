@@ -66,7 +66,7 @@ namespace CioDental1 // Define el espacio de nombres CioDental1
             string accion = "Se realizó una cita"; // Define la acción realizada
             string usuario = SistemaAutenticacion.NombreUsuarioLogueado; // Obtiene el nombre del usuario logueado
 
-            conexion.Modificaciones("exec Insertar_Bitacoras  '" + fecha + "', '" + hora + "', '" + accion + "','" + usuario + "' "); // Inserta la acción en la bitácora
+            conexion.Modificaciones("exec Insertar_Bitacoras CAST(  '" + fecha + "' AS Date), CAST('" + hora + "' AS Time), '" + accion + "','" + usuario + "' "); // Inserta la acción en la bitácora
             conexion.Grids("exec VistaCitas", dgvCitas); // Actualiza el DataGridView con las citas
             string nombrePaciente = txtBuscarCitas.Text; // Obtiene el texto de búsqueda
             conexion.BuscarCitasPorNombrePaciente(nombrePaciente, dgvCitas); // Busca citas por nombre de paciente
@@ -112,7 +112,7 @@ namespace CioDental1 // Define el espacio de nombres CioDental1
             string accion = "Se actualizó una cita"; // Define la acción realizada
             string usuario = SistemaAutenticacion.NombreUsuarioLogueado; // Obtiene el nombre del usuario logueado
 
-            conexion.Modificaciones("exec Insertar_Bitacoras  '" + fecha + "', '" + hora + "', '" + accion + "','" + usuario + "' "); // Inserta la acción en la bitácora
+            conexion.Modificaciones("exec Insertar_Bitacoras CAST(  '" + fecha + "' AS Date), CAST('" + hora + "' AS Time), '" + accion + "','" + usuario + "' "); // Inserta la acción en la bitácora
             string nombrePaciente = txtBuscarCitas.Text; // Obtiene el texto de búsqueda
             conexion.BuscarCitasPorNombrePaciente(nombrePaciente, dgvCitas); // Busca citas por nombre de paciente
         }
@@ -131,7 +131,7 @@ namespace CioDental1 // Define el espacio de nombres CioDental1
                 string accion = "Se eliminó una cita"; // Define la acción realizada
                 string usuario = SistemaAutenticacion.NombreUsuarioLogueado; // Obtiene el nombre del usuario logueado
 
-                conexion.Modificaciones("exec Insertar_Bitacoras  '" + fecha + "', '" + hora + "', '" + accion + "','" + usuario + "' "); // Inserta la acción en la bitácora
+                conexion.Modificaciones("exec Insertar_Bitacoras CAST(  '" + fecha + "' AS Date), CAST('" + hora + "' AS Time), '" + accion + "','" + usuario + "' "); // Inserta la acción en la bitácora
                 string nombrePaciente = txtBuscarCitas.Text; // Obtiene el texto de búsqueda
                 conexion.BuscarCitasPorNombrePaciente(nombrePaciente, dgvCitas); // Busca citas por nombre de paciente
             }
@@ -168,7 +168,7 @@ namespace CioDental1 // Define el espacio de nombres CioDental1
             DateTime HorCit = dtpHoraCita.Value; // Obtiene el valor de dtpHoraCita
             bool EstCit = false; // Define el estado de la cita como false
 
-            conexion.Modificaciones("exec Desactivar_Citas '" + IdCit + " ', ' " + IdPac + " ', ' " + FecCit + " ', ' " + HorCit + " ', ' " + EstCit +" ' "); // Desactiva la cita en la base de datos
+            conexion.Modificaciones("exec Desactivar_Citas '" + IdCit + " ', ' " + IdPac + " ', ' " + FecCit + " ', ' " + HorCit + " ', ' " + EstCit + " ' "); // Desactiva la cita en la base de datos
             MessageBox.Show("La cita ha sido DESACTIVADA correctamente"); // Muestra un mensaje de confirmación
             Autonum(); // Llama al método Autonum
             dtpFechaCitas.ResetText(); // Reinicia el texto de dtpFechaCitas
@@ -179,7 +179,7 @@ namespace CioDental1 // Define el espacio de nombres CioDental1
             string accion = "Se desactivó una cita"; // Define la acción realizada
             string usuario = SistemaAutenticacion.NombreUsuarioLogueado; // Obtiene el nombre del usuario logueado
 
-            conexion.Modificaciones("exec Insertar_Bitacoras  '" + fecha + "', '" + hora + "', '" + accion + "','" + usuario + "' "); // Inserta la acción en la bitácora
+            conexion.Modificaciones("exec Insertar_Bitacoras CAST(  '" + fecha + "' AS Date), CAST('" + hora + "' AS Time), '" + accion + "','" + usuario + "' "); // Inserta la acción en la bitácora
             string nombrePaciente = txtBuscarCitas.Text; // Obtiene el texto de búsqueda
             conexion.BuscarCitasPorNombrePaciente(nombrePaciente, dgvCitas); // Busca citas por nombre de paciente
         }

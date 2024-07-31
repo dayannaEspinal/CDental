@@ -22,7 +22,7 @@ namespace CioDental1
 
         Conexión conexion = new Conexión(); 
 
-        SqlConnection sqlCon = new SqlConnection("Data Source=DESKTOP-1BUCJLF\\SQLEXPRESS; Initial Catalog=CioDental1; Integrated Security=true"); 
+        SqlConnection sqlCon = new SqlConnection("Data Source=localhost; Initial Catalog=CioDental1; Integrated Security=true"); 
 
         private void btnRegistrarse_Click(object sender, EventArgs e) 
         {
@@ -92,28 +92,28 @@ namespace CioDental1
                 txtContraseña.UseSystemPasswordChar = false;             }
         }
 
-        private void txtContraseña_Enter(object sender, EventArgs e) // Evento que se activa cuando el control txtContraseña gana el foco
+        private void txtContraseña_Enter(object sender, EventArgs e)
         {
-            if (txtContraseña.Text == "Contraseña") // Verifica si el texto del campo de contraseña es el texto predeterminado
+            if (txtContraseña.Text == "Contraseña") 
             {
-                txtContraseña.Text = ""; // Limpia el campo de contraseña
-                txtContraseña.ForeColor = Color.Black; // Cambia el color del texto a negro
-                txtContraseña.UseSystemPasswordChar = true; // Activa el uso de caracteres de contraseña
+                txtContraseña.Text = ""; 
+                txtContraseña.ForeColor = Color.Black; 
+                txtContraseña.UseSystemPasswordChar = true; 
             }
         }
 
-        private void btnSalir_Click(object sender, EventArgs e) // Evento que se activa al hacer clic en el botón "Salir"
+        private void btnSalir_Click(object sender, EventArgs e) 
         {
             if (MessageBox.Show("Desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes) // Muestra un mensaje de confirmación antes de salir
             {
-                this.Close(); // Cierra el formulario actual
+                this.Close(); 
             }
-            Application.Exit(); // Cierra la aplicación
+            Application.Exit(); 
         }
 
-        private void pbCerrar_Click_1(object sender, EventArgs e) // Evento que se activa al hacer clic en el botón de cerrar
+        private void pbCerrar_Click_1(object sender, EventArgs e) 
         {
-            Application.Exit(); // Cierra la aplicación
+            Application.Exit(); 
 
             string hora = DateTime.Now.ToLongTimeString(); // Obtiene la hora actual en formato de cadena larga
             string fecha = DateTime.Now.ToShortDateString(); // Obtiene la fecha actual en formato de cadena corta
